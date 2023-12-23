@@ -11,13 +11,13 @@
 #include <string>
 #include <eosio/crypto.hpp>
 #include <eosio/transaction.hpp>
-#include "../tables/atomic.hpp"
+//#include "../tables/atomic.hpp"
 #include <cmath>
 #include "tables.hpp"
 #include "structs.hpp"
 #include "constants.hpp"
 #include <limits>
-#include "../tables/atomicdata.hpp"
+#include "./atomicdata.hpp"
 
 using namespace eosio;
 

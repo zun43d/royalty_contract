@@ -5,12 +5,12 @@
 //Tables on other contracts
 
 struct balances_s {
-    name           owner;
-    vector <asset> quantities;
+    eosio::name           owner;
+    std::vector <asset> quantities;
 
     uint64_t primary_key() const { return owner.value; };
 };
-typedef multi_index <name("balances"), balances_s> balances_t;
+typedef multi_index <eosio::name("balances"), balances_s> balances_t;
 
 
 struct [[eosio::table]] daos {
@@ -106,9 +106,9 @@ eosio::indexed_by<"id"_n, eosio::const_mem_fun<farms_v2, uint64_t, &farms_v2::th
 >;
 
 struct [[eosio::table]] stat {
-  asset    	supply;
-  asset 	max_supply;
-  name 		issuer;
+  eosio::asset    	supply;
+  eosio::asset 	max_supply;
+  eosio::name 		issuer;
 
   uint64_t primary_key()const { return supply.symbol.code().raw(); }
 };
